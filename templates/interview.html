@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Interview Coach | CareerPilot AI{% endblock %}
+{% block page_title %}AI Interview Coach{% endblock %}
+{% block content %}
+<div class="soft-card mb-4"><form action="/interview/start" method="post"><div class="row g-3"><div class="col-md-6"><label class="form-label">Interview Type</label><select name="interview_type" class="form-select"><option>Resume Based</option><option>HR</option><option>Technical</option><option>Project Based</option><option>Python</option><option>C++</option></select></div><div class="col-md-6"><label class="form-label">Difficulty</label><select name="difficulty" class="form-select"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></div></div><button class="btn btn-primary mt-3">Generate Question</button></form></div>
+{% if question %}<div class="soft-card mb-4"><h3>Interview question</h3><div class="alert alert-primary mt-3">{{ question }}</div><form action="/interview/evaluate" method="post"><input type="hidden" name="question" value="{{ question }}"><input type="hidden" name="interview_type" value="{{ interview_type }}"><input type="hidden" name="difficulty" value="{{ difficulty }}"><textarea name="candidate_answer" class="form-control" rows="8" placeholder="Type your answer..." required></textarea><button class="btn btn-primary mt-3">Evaluate Answer</button></form></div>{% endif %}
+{% if feedback %}<div class="soft-card"><h3>AI evaluation</h3><div class="output-text mt-3">{{ feedback }}</div></div>{% endif %}
+{% endblock %}

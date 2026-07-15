@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Resume Analyzer | CareerPilot AI{% endblock %}
+{% block page_title %}Resume Analyzer{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-xl-8"><div class="soft-card"><div class="text-center mb-4"><div class="tool-icon mx-auto"><i class="fa-solid fa-cloud-arrow-up"></i></div><h2>Upload your resume</h2><p class="muted">PDF only. Your resume is securely processed on the backend and stored locally in SQLite.</p></div><form action="/upload" method="post" enctype="multipart/form-data"><input class="form-control mb-3" type="file" name="file" accept=".pdf,application/pdf" required><button class="btn btn-primary w-100 btn-lg" type="submit">Analyze with Gemini</button></form></div></div></div>
+{% endblock %}

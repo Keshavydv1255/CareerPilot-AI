@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | CareerPilot AI{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block content %}
+<div class="hero-card mb-4"><h1 class="fw-bold">Your AI career command center</h1><p class="mb-0 opacity-75">All tools are live, connected to Gemini and personalized using your stored resume.</p></div>
+<div class="stat-grid mb-5">
+  <div class="stat-card"><div class="muted">Resume analyses</div><div class="number">{{ stats.resume_analyses }}</div></div>
+  <div class="stat-card"><div class="muted">AI chats</div><div class="number">{{ stats.ai_chats }}</div></div>
+  <div class="stat-card"><div class="muted">Interviews</div><div class="number">{{ stats.interviews }}</div></div>
+  <div class="stat-card"><div class="muted">Cover letters</div><div class="number">{{ stats.cover_letters }}</div></div>
+  <div class="stat-card"><div class="muted">Job matches</div><div class="number">{{ stats.job_matches }}</div></div>
+  <div class="stat-card"><div class="muted">Reports</div><div class="number">{{ stats.reports }}</div></div>
+</div>
+<h2 class="section-title">Quick actions</h2>
+<div class="tool-grid">
+  <a class="tool-card" href="/upload"><div class="tool-icon"><i class="fa-solid fa-file-arrow-up"></i></div><h4>Analyze Resume</h4><p class="muted">Upload a PDF and get your complete report.</p><span class="btn btn-primary">Open</span></a>
+  <a class="tool-card" href="/chat"><div class="tool-icon"><i class="fa-solid fa-comments"></i></div><h4>Career Chat</h4><p class="muted">Ask questions based on your saved resume.</p><span class="btn btn-primary">Open</span></a>
+  <a class="tool-card" href="/interview"><div class="tool-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Interview Coach</h4><p class="muted">Practice and receive instant evaluation.</p><span class="btn btn-primary">Open</span></a>
+  <a class="tool-card" href="/job-match"><div class="tool-icon"><i class="fa-solid fa-bullseye"></i></div><h4>Job Matcher</h4><p class="muted">Measure fit against a job description.</p><span class="btn btn-primary">Open</span></a>
+  <a class="tool-card" href="/resume-improver"><div class="tool-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h4>Resume Improver</h4><p class="muted">Rewrite your resume for a target role.</p><span class="btn btn-primary">Open</span></a>
+  <a class="tool-card" href="/report/download"><div class="tool-icon"><i class="fa-solid fa-file-pdf"></i></div><h4>AI Report</h4><p class="muted">Download a polished resume analysis PDF.</p><span class="btn btn-primary">Download</span></a>
+</div>
+{% endblock %}

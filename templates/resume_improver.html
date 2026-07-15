@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Resume Improver | CareerPilot AI{% endblock %}
+{% block page_title %}AI Resume Improver{% endblock %}
+{% block content %}
+{% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}<div class="soft-card mb-4"><form action="/resume-improver" method="post"><label class="form-label">Target job role</label><input name="target_role" class="form-control" value="{{ target_role }}" placeholder="Python Backend Developer" required><button class="btn btn-primary mt-3">Improve My Resume</button></form></div>{% if improved_resume %}<div class="soft-card"><div class="d-flex justify-content-between"><h3>Improved resume draft</h3><button class="btn btn-outline-primary" onclick="navigator.clipboard.writeText(document.getElementById('resumeDraft').value)">Copy</button></div><textarea id="resumeDraft" class="form-control mt-3" rows="35" readonly>{{ improved_resume }}</textarea></div>{% endif %}
+{% endblock %}

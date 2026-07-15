@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Job Matcher | CareerPilot AI{% endblock %}
+{% block page_title %}AI Job Matcher{% endblock %}
+{% block content %}
+{% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+<div class="soft-card mb-4"><form action="/job-match" method="post"><label class="form-label fw-semibold">Paste the complete job description</label><textarea name="job_description" class="form-control" rows="11" required>{{ job_description }}</textarea><button class="btn btn-primary mt-3">Analyze Match</button></form></div>
+{% if result %}<div class="stat-grid mb-4"><div class="stat-card"><div class="muted">Match score</div><div class="number">{{ result.match_score }}%</div></div><div class="stat-card"><div class="muted">Recommendation</div><div class="fw-bold mt-2">{{ result.recommendation }}</div></div></div><div class="row g-4"><div class="col-md-6"><div class="soft-card h-100"><h3 class="text-success">Matching skills</h3><ul>{% for item in result.matching_skills %}<li>{{ item }}</li>{% endfor %}</ul></div></div><div class="col-md-6"><div class="soft-card h-100"><h3 class="text-danger">Missing skills</h3><ul>{% for item in result.missing_skills %}<li>{{ item }}</li>{% endfor %}</ul></div></div><div class="col-md-6"><div class="soft-card h-100"><h3>Strengths</h3><ul>{% for item in result.strengths %}<li>{{ item }}</li>{% endfor %}</ul></div></div><div class="col-md-6"><div class="soft-card h-100"><h3>Risks</h3><ul>{% for item in result.risks %}<li>{{ item }}</li>{% endfor %}</ul></div></div></div><div class="soft-card mt-4"><h3>Preparation plan</h3><ol>{% for item in result.preparation_plan %}<li>{{ item }}</li>{% endfor %}</ol></div>{% endif %}
+{% endblock %}

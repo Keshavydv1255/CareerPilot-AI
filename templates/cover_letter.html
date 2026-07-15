@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Cover Letter | CareerPilot AI{% endblock %}
+{% block page_title %}Cover Letter Generator{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-xl-9"><div class="soft-card mb-4"><form action="/cover-letter" method="post"><div class="row g-3"><div class="col-md-6"><label class="form-label">Company</label><input class="form-control" name="company" required></div><div class="col-md-6"><label class="form-label">Role</label><input class="form-control" name="role" required></div></div><button class="btn btn-primary mt-3">Generate Cover Letter</button></form></div>{% if cover_letter %}<div class="soft-card"><div class="d-flex justify-content-between"><h3>Generated cover letter</h3><button class="btn btn-outline-primary" onclick="navigator.clipboard.writeText(document.getElementById('letter').value)">Copy</button></div><textarea id="letter" class="form-control mt-3" rows="22" readonly>{{ cover_letter }}</textarea></div>{% endif %}</div></div>
+{% endblock %}

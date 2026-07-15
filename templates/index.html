@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}CareerPilot AI{% endblock %}
+{% block page_title %}Welcome{% endblock %}
+{% block content %}
+<div class="hero-card mb-4">
+  <div class="row align-items-center g-4">
+    <div class="col-lg-8"><span class="badge text-bg-light mb-3">GEMINI-POWERED CAREER PLATFORM</span><h1 class="display-5 fw-bold">Navigate your career with intelligent, personalized guidance.</h1><p class="lead opacity-75">Analyze resumes, prepare for interviews, match jobs, improve applications and generate professional cover letters from one workspace.</p><div class="d-flex flex-wrap gap-2"><a href="/upload" class="btn btn-light btn-lg">Analyze Resume</a><a href="/dashboard" class="btn btn-outline-light btn-lg">Open Dashboard</a></div></div>
+    <div class="col-lg-4 text-center"><i class="fa-solid fa-paper-plane display-1 opacity-75"></i></div>
+  </div>
+</div>
+<h2 class="section-title">Everything you need to move forward</h2>
+<div class="tool-grid">
+  <a class="tool-card" href="/upload"><div class="tool-icon"><i class="fa-solid fa-file-magnifying-glass"></i></div><h4>Resume Analyzer</h4><p class="muted mb-0">ATS score, strengths, gaps and roadmap.</p></a>
+  <a class="tool-card" href="/chat"><div class="tool-icon"><i class="fa-solid fa-comments"></i></div><h4>Career Chat</h4><p class="muted mb-0">Resume-aware AI career advice.</p></a>
+  <a class="tool-card" href="/interview"><div class="tool-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Interview Coach</h4><p class="muted mb-0">Questions, scoring and model answers.</p></a>
+  <a class="tool-card" href="/job-match"><div class="tool-icon"><i class="fa-solid fa-bullseye"></i></div><h4>Job Matcher</h4><p class="muted mb-0">Compare your resume with any JD.</p></a>
+  <a class="tool-card" href="/resume-improver"><div class="tool-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h4>Resume Improver</h4><p class="muted mb-0">Generate a role-focused improved draft.</p></a>
+  <a class="tool-card" href="/cover-letter"><div class="tool-icon"><i class="fa-solid fa-envelope-open-text"></i></div><h4>Cover Letter</h4><p class="muted mb-0">Create a personalized application letter.</p></a>
+</div>
+{% endblock %}
