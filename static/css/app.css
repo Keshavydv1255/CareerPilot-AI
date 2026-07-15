@@ -3,3 +3,26 @@ body.dark{--bg:#0b1020;--surface:#131a2d;--surface2:#1b2440;--text:#f8fafc;--mut
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;transition:.25s}.app-shell{min-height:100vh;display:flex}.sidebar{position:fixed;inset:0 auto 0 0;width:270px;padding:26px 18px;background:var(--sidebar);color:#fff;display:flex;flex-direction:column;z-index:30}.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-size:20px;font-weight:700;padding:5px 10px 24px}.brand b{color:#a78bfa}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6)}.nav-stack{display:flex;flex-direction:column;gap:6px}.nav-stack a,.sidebar-foot a{color:#cbd5e1;text-decoration:none;padding:12px 14px;border-radius:12px;display:flex;align-items:center;gap:12px;font-size:14px}.nav-stack a:hover,.sidebar-foot a:hover{background:#1f2937;color:#fff}.nav-stack i,.sidebar-foot i{width:20px}.sidebar-foot{margin-top:auto}.main-panel{margin-left:270px;width:calc(100% - 270px)}.topbar{height:78px;padding:0 34px;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20}.eyebrow{font-size:10px;letter-spacing:.16em;color:var(--muted);font-weight:800}.page-content{padding:34px;max-width:1440px;margin:auto}.icon-btn{border:1px solid var(--border);background:var(--surface);color:var(--text);width:42px;height:42px;border-radius:12px}.hero-card{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:24px;padding:36px;box-shadow:var(--shadow)}.soft-card,.tool-card,.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}.soft-card{padding:26px}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.tool-card{padding:24px;text-decoration:none;color:var(--text);transition:.2s}.tool-card:hover{transform:translateY(-4px);color:var(--text)}.tool-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--surface2);color:var(--primary);font-size:20px;margin-bottom:16px}.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}.stat-card{padding:22px}.stat-card .number{font-size:32px;font-weight:800}.muted{color:var(--muted)}.form-control,.form-select{background:var(--surface);color:var(--text);border-color:var(--border);border-radius:12px;padding:12px}.form-control:focus,.form-select:focus{background:var(--surface);color:var(--text);border-color:#8b5cf6;box-shadow:0 0 0 .2rem rgba(139,92,246,.15)}.btn{border-radius:12px;padding:10px 16px;font-weight:600}.btn-primary{background:linear-gradient(135deg,#4f46e5,#7c3aed);border:0}.progress{background:var(--surface2);border-radius:999px}.section-title{font-weight:800;margin-bottom:18px}.output-text{white-space:pre-wrap;line-height:1.65}.table{--bs-table-bg:transparent;--bs-table-color:var(--text);--bs-table-border-color:var(--border)}@media(max-width:991px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:translateX(0)}.main-panel{margin-left:0;width:100%}.page-content{padding:22px}.topbar{padding:0 20px}}
 
 .working-overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);backdrop-filter:blur(5px);display:none;place-items:center;z-index:9999}.working-overlay.show{display:grid}.working-card{min-width:290px;max-width:90vw;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}.working-card span{color:var(--muted);font-size:13px}
+.app-footer {
+    margin-top: auto;
+    padding: 24px 32px;
+    text-align: center;
+    border-top: 1px solid var(--border-color, #e5e7eb);
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-muted {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+body.dark .app-footer {
+    background: rgba(15, 23, 42, 0.72);
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .footer-muted {
+    color: #94a3b8;
+}
