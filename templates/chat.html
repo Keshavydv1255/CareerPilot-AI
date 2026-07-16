@@ -1,6 +1,93 @@
 {% extends "base.html" %}
-{% block title %}Career Chat | CareerPilot AI{% endblock %}
-{% block page_title %}AI Career Chat{% endblock %}
+
+{% block title %}
+Career Chat | CareerPilot AI
+{% endblock %}
+
+{% block page_title %}
+AI Career Chat
+{% endblock %}
+
 {% block content %}
-<div class="row justify-content-center"><div class="col-xl-9"><div class="soft-card mb-4"><form action="/chat" method="post"><label class="form-label fw-semibold">Ask anything about your career or uploaded resume</label><textarea name="question" class="form-control" rows="5" placeholder="Example: Which skills should I learn next?" required>{{ question }}</textarea><button class="btn btn-primary mt-3" type="submit">Ask CareerPilot</button></form></div>{% if answer %}<div class="soft-card"><h3>AI response</h3><div class="output-text mt-3">{{ answer }}</div></div>{% endif %}</div></div>
+
+<div class="row justify-content-center">
+
+    <div class="col-xl-9">
+
+        <div class="soft-card mb-4">
+
+            <form id="streamChatForm">
+
+                <label
+                    for="chatQuestion"
+                    class="form-label fw-semibold">
+
+                    Ask anything about your career or uploaded resume
+
+                </label>
+
+                <textarea
+                    id="chatQuestion"
+                    name="question"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Example: Which skills should I learn next?"
+                    required></textarea>
+
+                <button
+                    id="askCareerPilotButton"
+                    class="btn btn-primary mt-3"
+                    type="submit">
+
+                    Ask CareerPilot
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <div
+            id="streamResponseCard"
+            class="soft-card d-none">
+
+            <div
+                class="d-flex justify-content-between
+                       align-items-center gap-3 mb-3">
+
+                <h3 class="mb-0">
+                    AI response
+                </h3>
+
+                <span
+                    id="streamStatus"
+                    class="badge text-bg-primary">
+
+                    Generating...
+
+                </span>
+
+            </div>
+
+            <div
+                id="streamResponse"
+                class="output-text"
+                style="
+                    white-space: pre-wrap;
+                    min-height: 120px;
+                ">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="/static/js/chat-stream.js"></script>
+
 {% endblock %}
